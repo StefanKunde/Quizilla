@@ -5,26 +5,31 @@ public class Questions extends ArrayList<Question>
 {
 	// Konstruktor.
 	public Questions() {}
+
 	
-	public void printAllQuestions()
+	// Methoden.
+	public void printAllQuestionsAndAnswers()
 	{
+		String tmpAnswer = "";
 		for(Question question : this )
 		{
-			System.out.println(question.question);
-		}
-	}
-	
-	public void printAllAnswersFromAllQuestions()
-	{
-		for(Question question : this )
-		{
+			System.out.println(question.getQuestion());
 			for(Answer answer : question.answers)
 			{
-				System.out.println(answer.getAnswer());
+				tmpAnswer = answer.getAnswer();
+				if(answer.getIsCorrect())
+				{
+					tmpAnswer += " (Korrekt)";
+				}
+				System.out.println(tmpAnswer);
+				tmpAnswer = "";
 			}
+			System.out.println(tmpAnswer);
 			
 		}
 	}
+	
+	
 	
 	
 	

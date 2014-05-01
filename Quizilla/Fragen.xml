@@ -44,7 +44,7 @@
 	<Frage value="Wie viele Sterne hat die amerikanische Nationalflagge?">
 		<Antwort>39</Antwort> 
 		<Antwort>58</Antwort> 
-		<Antwort>44 Sauce</Antwort> 
+		<Antwort>44</Antwort> 
 		<Antwort correct="true">50</Antwort> 
 	</Frage>
 	
@@ -58,7 +58,7 @@
 	<Frage value="Wie bezeichnet man folgendes Blatt beim Pokern: Th-Jh-Qh-Kh-Ah?">
 		<Antwort>Straight</Antwort> 
 		<Antwort>Straight Flush</Antwort> 
-		<Antwort correct="true">Flush</Antwort> 
-		<Antwort>Royal Flush</Antwort> 
+		<Antwort>Flush</Antwort> 
+		<Antwort correct="true">Royal Flush</Antwort> 
 	</Frage>
 </Fragen>

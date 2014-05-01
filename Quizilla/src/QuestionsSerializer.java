@@ -14,15 +14,16 @@ public class QuestionsSerializer
 {
 	
 	// Variablen.
-	Document doc;
-	Questions questions;
-	List<Answer> answers;
-	List<Element> questionElements;
-	List<Element> questionsElements;
-	Attribute valueAttribute;
-	Attribute isCorrectAttribute;
-	Element rootElement;
-
+	private Document doc;
+	private Questions questions;
+	private List<Answer> answers;
+	private List<Element> questionElements;
+	private List<Element> questionsElements;
+	private Attribute valueAttribute;
+	private Element rootElement;
+	private Answer answer;
+	private boolean answerIsCorrect;
+	
 	// Konstruktor.
 	public QuestionsSerializer()
 	{
@@ -32,8 +33,9 @@ public class QuestionsSerializer
 		questionElements = null;
 		questionsElements = null;
 		valueAttribute = null;
-		isCorrectAttribute = null;
 		rootElement = null;
+		answer = null;
+		answerIsCorrect = false;
 	}
 	
 	
@@ -61,23 +63,18 @@ public class QuestionsSerializer
 		// Durchläuft alle Childelement des Rootelements (<Frage>...</Frage>)
 		for(int i = 0; i < questionsElements.size(); i++)
 		{
-			answers = new ArrayList<Answer>();	// Initialisiert die Arraylist<Answer>,
 			questions.add(new Question());								// Erstellt eine neue Frage und fügt sie der erweiterten Liste [Questions question] hinzu.
 			valueAttribute = questionsElements.get(i).getAttribute("value"); // Weist einem Attributobjekt das Attribut [value] zu.
 			questions.get(i).setQuestion(valueAttribute.getValue());			// Setzt die aktuelle Frage (der Value des aktuellen Attributes) im aktuellen Questionobjekt fest.
 			questionElements = questionsElements.get(i).getChildren();  // Speichert alle Childelemente des aktuellen Elements in einer List<Element>.
-			
+			answers = new ArrayList<Answer>();	// Initialisiert die Arraylist<Answer>,
 			
 			// Durchläuft die Childelemente vom aktuellen Childelement des Rootelements (<Antwort> ... </Antwort>).
 			for(int j = 0; j < questionElements.size(); j++) 
 			{
-				Answer answer = new Answer(questionElements.get(j).getText()); // Erstellt ein neues Answerobjekt und übergibt im Konstruktor den Textinhalt des aktuellen Antwortelements
-				boolean answerIsCorrect = questionElements.get(j).hasAttributes(); // Wenn das Element <Antwort> Attributen hat, muss die Antwort korrekt sein, weil nur Antworten die korrekt sind ein Attribut haben.
-				if(answerIsCorrect) 
-				{
-					isCorrectAttribute = questionElements.get(j).getAttribute("correct");
-					answer.setIsCorrect(true);
-				}
+				answer = new Answer(questionElements.get(j).getText()); // Erstellt ein neues Answerobjekt und übergibt im Konstruktor den Textinhalt des aktuellen Antwortelements
+				answerIsCorrect = questionElements.get(j).hasAttributes(); // Wenn das Element <Antwort> Attributen hat, muss die Antwort korrekt sein, weil nur Antworten die korrekt sind ein Attribut haben.
+				answer.setIsCorrect(answerIsCorrect);
 				answers.add( answer );
 			}
 			questions.get(i).addAnswers(answers);

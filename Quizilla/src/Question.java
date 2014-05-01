@@ -5,8 +5,8 @@ import java.util.List;
 public class Question
 {
 	// Variablen.
-	String question = "";
-	List<Answer> answers = null;
+	String question;
+	List<Answer> answers;
 	
 	
 	// Konstruktoren.
@@ -18,6 +18,8 @@ public class Question
 	
 	public Question()
 	{
+		question = "";
+		answers = null;
 	}
 	
 	
@@ -26,6 +28,11 @@ public class Question
 	{
 		this.question = question;
 		answers = new ArrayList<Answer>();
+	}
+	
+	public String getQuestion()
+	{
+		return question;
 	}
 	
 	public void addAnswers(List<Answer> answers)
