@@ -1,31 +1,29 @@
+
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.xml.parsers.*;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.*;
-import javax.xml.transform.stream.*;
+import org.jdom2.Attribute;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
 
-import org.xml.sax.*;
-import org.w3c.dom.*;
 
 
 public class Quizilla 
 {
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
+	
+	
+	
+	public static void main(String[] args)
 	{	
-		String value = null;
+		File xmlQuesstionsFile = new File("Fragen.xml");
+		QuestionsSerializer questionSerializer = new QuestionsSerializer();
+		Questions questions = questionSerializer.readQuestionsFromXml(xmlQuesstionsFile);
 		
-		File file = new File("Fragen.xml");
-		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory
-		        .newInstance();
-		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-		Document document = documentBuilder.parse(file);
-	    
-		document.getElementById("Fragen");
-		NodeList nl = document.getChildNodes();
-		
-	    System.out.println(nl);
+	 
 		
 	}
 }

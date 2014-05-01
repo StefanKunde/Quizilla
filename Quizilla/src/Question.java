@@ -1,22 +1,38 @@
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Question
 {
 	// Variablen.
-	String question;
-	String[] answers = new String[3];
-	short subjectId;
-	String difficult;
+	String question = "";
+	List<Answer> answers = null;
 	
-	// Konstruktor.
-	public Question(String question, String[] answers, short subjectId, String difficult)
+	
+	// Konstruktoren.
+	public Question(String question, List<Answer> answers)
 	{
 		this.question = question;
 		this.answers = answers;
-		this.subjectId = subjectId;
-		this.difficult = difficult;
+	}
+	
+	public Question()
+	{
 	}
 	
 	
-	// Methoden. @TODO: implementieren.
+	// Methoden.
+	public void setQuestion(String question)
+	{
+		this.question = question;
+		answers = new ArrayList<Answer>();
+	}
 	
+	public void addAnswers(List<Answer> answers)
+	{
+		for(Answer answer : answers )
+		{
+			this.answers.add(answer);
+		}
+	}
 }

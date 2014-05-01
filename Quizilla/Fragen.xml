@@ -1,81 +1,64 @@
 <?xml version="1.0"  ?>
 <Fragen>
-	<Frage1>
-		<Value>Wann wurde die Berliner Mauer niedergerissen?</Value>
-		<Antwort_1>1891</Antwort_1> 
-		<Antwort_2>1984</Antwort_2> 
-		<Antwort_3>Garnicht</Antwort_3> 
-		<Antwort_4>1989</Antwort_4> 
-	</Frage1>
-	<Frage2>
-		<Value>Was ist die Muttersprache von Albert Einstein?</Value>
-		<Antwort_1>Deutsch</Antwort_1> 
-		<Antwort_2>Englisch</Antwort_2> 
-		<Antwort_3>Französisch</Antwort_3> 
-		<Antwort_4>Spanisch</Antwort_4> 
-	</Frage2>
+	<Frage value="Wann wurde die Berliner Mauer niedergerissen?">
+		<Antwort>1891</Antwort> 
+		<Antwort>1984</Antwort> 
+		<Antwort>Garnicht</Antwort> 
+		<Antwort correct="true">1989</Antwort> 
+	</Frage>
+	<Frage value="Was ist die Muttersprache von Albert Einstein?">
+		<Antwort correct="true">Deutsch</Antwort> 
+		<Antwort>Englisch</Antwort> 
+		<Antwort>Französisch</Antwort> 
+		<Antwort>Spanisch</Antwort> 
+	</Frage>
 	
-	<Frage3>
-		<Value>Wie heisst die griechische Göttermutter?</Value>
-		<Antwort_1>Getropolos</Antwort_1> 
-		<Antwort_2>Malta</Antwort_2> 
-		<Antwort_3>Hera</Antwort_3> 
-		<Antwort_4>Edana</Antwort_4> 
-	</Frage3>
+	<Frage value ="Wie heisst die griechische Göttermutter?">
+		<Antwort>Getropolos</Antwort> 
+		<Antwort>Malta</Antwort> 
+		<Antwort correct="true">Hera</Antwort> 
+		<Antwort>Edana</Antwort> 
+	</Frage>
 	
-	<Frage4>
-		<Value>Wie heisst die Griechische Göttermutter?</Value>
-		<Antwort_1>Getropolos</Antwort_1> 
-		<Antwort_2>Malta</Antwort_2> 
-		<Antwort_3>Hera</Antwort_3> 
-		<Antwort_4>Edana</Antwort_4> 
-	</Frage4>
+	<Frage value="Wie heißt die chemische Formel für Salzsäure?">
+		<Antwort>H2O</Antwort> 
+		<Antwort correct="true">HCI</Antwort> 
+		<Antwort>GPD</Antwort>
+		<Antwort>BHS</Antwort> 
+	</Frage>
 	
-	<Frage5>
-		<Value>Wie heißt die chemische Formel für Salzsäure?</Value>
-		<Antwort_1>H2O</Antwort_1> 
-		<Antwort_2>HCI</Antwort_2> 
-		<Antwort_3>GPD</Antwort_3> 
-		<Antwort_4>BHS</Antwort_4> 
-	</Frage5>
+	<Frage value="Wählen Sie das bekannteste Fremdwort für eine Festplatte aus.">
+		<Antwort correct="true">Harddisk</Antwort> 
+		<Antwort>Magnet</Antwort>
+		<Antwort>Houesedata</Antwort> 
+		<Antwort>Festplatte</Antwort> 
+	</Frage>
 	
-	<Frage6>
-		<Value>Fremdwort für Festplatte?</Value>
-		<Antwort_1>Harddisk</Antwort_1> 
-		<Antwort_2>Savemedium</Antwort_2> 
-		<Antwort_3>Houesedata</Antwort_3> 
-		<Antwort_4>Festplatte</Antwort_4> 
-	</Frage6>
+	<Frage value="Was ist Dekathlon?">
+		<Antwort>Tomatenart</Antwort> 
+		<Antwort correct="true">Zehnkampf</Antwort> 
+		<Antwort>Burgerking Sauce</Antwort> 
+		<Antwort>Druckertinte</Antwort> 
+	</Frage>
 	
-	<Frage7>
-		<Value>Was ist Dekathlon?</Value>
-		<Antwort_1>Tomatenart</Antwort_1> 
-		<Antwort_2>Zehnkampf</Antwort_2> 
-		<Antwort_3>Burgerking Sauce</Antwort_3> 
-		<Antwort_4>Druckertinte</Antwort_4> 
-	</Frage7>
+	<Frage value="Wie viele Sterne hat die amerikanische Nationalflagge?">
+		<Antwort>39</Antwort> 
+		<Antwort>58</Antwort> 
+		<Antwort>44 Sauce</Antwort> 
+		<Antwort correct="true">50</Antwort> 
+	</Frage>
 	
-	<Frage8>
-		<Value>Wie viele Sterne hat die amerikanische Nationalflagge?</Value>
-		<Antwort_1>39</Antwort_1> 
-		<Antwort_2>58</Antwort_2> 
-		<Antwort_3>44 Sauce</Antwort_3> 
-		<Antwort_4>50</Antwort_4> 
-	</Frage8>
+	<Frage value="Ab wann wurde Aspirin als Medikament verkauft?">
+		<Antwort>4 v. Chr.</Antwort> 
+		<Antwort>1621</Antwort> 
+		<Antwort correct="true">1899</Antwort> 
+		<Antwort>1914</Antwort> 
+	</Frage>
 	
-	<Frage9>
-		<Value>Ab wann wurde Aspirin als Medikament verkauft?</Value>
-		<Antwort_1>4 v. Chr.</Antwort_1> 
-		<Antwort_2>1621</Antwort_2> 
-		<Antwort_3>1899</Antwort_3> 
-		<Antwort_4>1914</Antwort_4> 
-	</Frage9>
-	
-	<Frage10>
-		<Value>Wie bezeichnet man folgendes Blatt beim Pokern? Td-Jd-Qd-Kd-Ad</Value>
-		<Antwort_1>Straight</Antwort_1> 
-		<Antwort_2>Straight Flush</Antwort_2> 
-		<Antwort_3>Flush</Antwort_3> 
-		<Antwort_4>Royal Flush</Antwort_4> 
-	</Frage10>
+	<Frage value="Wie bezeichnet man folgendes Blatt beim Pokern: Th-Jh-Qh-Kh-Ah?">
+		<Antwort>Straight</Antwort> 
+		<Antwort>Straight Flush</Antwort> 
+		<Antwort correct="true">Flush</Antwort> 
+		<Antwort>Royal Flush</Antwort> 
+	</Frage>
 </Fragen>
