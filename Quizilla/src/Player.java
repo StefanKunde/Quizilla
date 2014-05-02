@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Player 
 {
 	// Variablen.
+	private String name;
 	private Score score;
 	private int correctAnswersAmount;
 	private int wrongAnswersAmount;
@@ -15,6 +16,7 @@ public class Player
 	// Konstruktor.
 	public Player()
 	{
+		name = "";
 		isAlive = true;
 		hasLifes = true;
 		score = new Score();
@@ -43,6 +45,16 @@ public class Player
 		givenAnswerId = Integer.parseInt(givenAnswer);
 		
 	    return question.getAnswerById(givenAnswerId);
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getName()
+	{
+		return name;
 	}
 	
 	public boolean getIsAlive()

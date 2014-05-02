@@ -7,42 +7,60 @@ public class Game
 	private Questions questions;
 	private Player player;
 	private int maxQuestions;
+	public Menu menu;
+	public Highscore highscore;
+	private int currentQuestion;
 	
 	// Konstrukoren.
 	public Game()
 	{
 		questions = null;
 		player = null;
+		menu = new Menu();
+		highscore = null;
+		currentQuestion = 0;
 	}
 	
 	public Game(Questions questions)
 	{
 		this.questions = questions;
 		this.player = null;
+		menu = new Menu();
+		highscore = null;
+		currentQuestion = 0;
 	}
 	
 	// Methoden.
 	
 	// Delegatefuntkion
-	public void start() 
+	public void startPlay() 
 	{
 		boolean givenAnswer = false;
+		
+		player = new Player();
+		this.addPlayer(player);
 		while( player.getHasLifes() && !questions.isEmpty())
 		{
+			currentQuestion++;
+			showCurrentQuestionsNumber(currentQuestion);
 			showLifes(player);
 			givenAnswer = nextRound(); // Stellt dem Spieler eine zufällige Frage, zeigt ihm Antworten, fragt ihn nach einer Antwort, kontrolliert ob die Antworte richtig oder falsch ist und liefert das Ergebnis als booleschen Wert zurück.
 			player.changeLifes(givenAnswer); // Verändert das Leben des Spieler je nach Antwort (richtig oder falsch).
 			markAnswerAsRightOrWrong(givenAnswer);
-			
 		}
 	}
 	
+	private void showCurrentQuestionsNumber(int currentQuestion) 
+	{
+		System.out.println("Frage: " + currentQuestion);
+	}
+
 	public void addPlayer(Player player)
 	{
 		this.player = player;
 	}
 	
-	public boolean nextRound()
+	private boolean nextRound()
 	{
 		String givenAnswer = "";
 		String correctAnswer = "";
@@ -81,6 +99,18 @@ public class Game
 		System.out.print("Leben: ");
 		System.out.print(player.getLifes() + "");
 		System.out.println("]");
+	}
+
+	public void goodLuckWishes() 
+	{
+		System.out.println("###########[SPIEL BEGINNT]###########");
+		System.out.println("###########[GOOD LUCK!!!!]###########");
+	}
+
+	public void over() 
+	{
+		System.out.println("GAME OVER");
+		// System.out.println( player.score.show() );
 	} 
 	
 	

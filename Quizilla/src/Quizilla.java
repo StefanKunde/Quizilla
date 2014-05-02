@@ -12,12 +12,28 @@ public class Quizilla
 		File xmlQuesstionsFile = new File("Fragen.xml");
 		QuestionsSerializer questionsSerializer = new QuestionsSerializer();
 		Questions questions = questionsSerializer.readQuestionsFromXml(xmlQuesstionsFile);
-		Player player = new Player();
 		Game game = new Game(questions);
+		int userChoice = 0;
 		
-
-		game.addPlayer(player);
-		game.start();
+		userChoice = game.menu.showMenu();
+		
+		switch(userChoice) // -1 um mit den MenuChoice-Enums eine korrekte Übereinstimmung zu erhalten.
+		{
+		case 1:
+			// game.setSettings(); @TODO
+			game.goodLuckWishes();
+			game.startPlay();
+			// game.gameOver(); @TODO
+			// game.saveScore(); @TODO
+			game.menu.showMenu();
+			break;
+		case 2:
+			// game.ShowHighscore();
+			
+		case 3:
+		case 4:
+		default:
+		}	
 		
 		
 		
