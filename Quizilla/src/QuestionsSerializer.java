@@ -41,7 +41,7 @@ public class QuestionsSerializer
 	
 	// Methoden:
 	
-	/* Liest eine XML-Datei in einem bestimmten Schema ein, serialisiert die Daten mit einem Questions-Objekt und gibt dieses wieder zurück.
+	/* Liest eine XML-Datei in einem bestimmtes Schema ein, serialisiert die Daten mit einem Questions-Objekt und gibt dieses wieder zurück.
 	 * 
 	 * Schema:
 	 */

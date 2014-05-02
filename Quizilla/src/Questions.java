@@ -3,30 +3,22 @@ import java.util.ArrayList;
 
 public class Questions extends ArrayList<Question>
 {
+
+
 	// Konstruktor.
 	public Questions() {}
 
 	
 	// Methoden.
-	public void printAllQuestionsAndAnswers()
+	public boolean hasNext()
 	{
-		String tmpAnswer = "";
-		for(Question question : this )
+		boolean hasNext = false;
+		if(this != null && this.size() > 0)
 		{
-			System.out.println(question.getQuestion());
-			for(Answer answer : question.answers)
-			{
-				tmpAnswer = answer.getAnswer();
-				if(answer.getIsCorrect())
-				{
-					tmpAnswer += " (Korrekt)";
-				}
-				System.out.println(tmpAnswer);
-				tmpAnswer = "";
-			}
-			System.out.println(tmpAnswer);
-			
+			hasNext = true;
 		}
+		
+		return hasNext;
 	}
 	
 	

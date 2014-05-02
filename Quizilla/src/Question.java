@@ -42,4 +42,63 @@ public class Question
 			this.answers.add(answer);
 		}
 	}
+	
+	public List<Answer> getAnswers()
+	{
+		return this.answers;
+	}
+	
+	public void askQuestion()
+	{
+		// Frage printen
+		System.out.print("Frage: ");
+		System.out.println(question);
+	}
+	
+	public void showAnswers()
+	{
+		int tmpIndex = 0;
+		
+		for(Answer answer : answers)
+		{
+			if(tmpIndex == 0)
+				tmpIndex = 1;
+			answer.showAnswers(tmpIndex);
+			tmpIndex++;
+		}
+	}
+	
+	public String getCorrectAnswer()
+	{
+		String correctAnswer = "";
+		for(Answer answer : answers)
+		{
+			if(answer.getIsCorrect())
+			{
+				correctAnswer = answer.getAnswer();
+			}
+		}
+		return correctAnswer;
+	}
+	
+	
+	public String getAnswerById(int id)
+	{
+		String answerTmp = "";
+		int counter = 0;
+		for(Answer answer : answers)
+		{
+			counter++;
+			if( id == counter )
+			{
+				answerTmp = answer.getAnswer();
+			}
+			
+		}
+		
+		return answerTmp;
+	}
+	
+	
+
 }

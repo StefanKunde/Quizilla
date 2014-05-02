@@ -8,11 +8,19 @@ public class Quizilla
 {
 	public static void main(String[] args)
 	{	
+		// Variablen.
 		File xmlQuesstionsFile = new File("Fragen.xml");
-		QuestionsSerializer questionSerializer = new QuestionsSerializer();
-		Questions questions = questionSerializer.readQuestionsFromXml(xmlQuesstionsFile);
+		QuestionsSerializer questionsSerializer = new QuestionsSerializer();
+		Questions questions = questionsSerializer.readQuestionsFromXml(xmlQuesstionsFile);
+		Player player = new Player();
+		Game game = new Game(questions);
 		
-		questions.printAllQuestionsAndAnswers();
+
+		game.addPlayer(player);
+		game.start();
+		
+		
+		
 		
 		
 	}

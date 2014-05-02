@@ -4,6 +4,7 @@ public class Answer
 	// Variablen.
 	private String answer = "";
 	private boolean isCorrect = false;
+	private boolean hasAsked = false;
 	
 	
 	// Konstruktor.
@@ -41,5 +42,13 @@ public class Answer
 	{
 		return answer;
 	}
+	
+	public void showAnswers(int id)
+	{
+		System.out.print(id + ". ");
+		System.out.println(answer);
+	}
+	
+	
 
 }
