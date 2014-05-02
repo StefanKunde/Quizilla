@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -11,6 +10,7 @@ public class Player
 	private int wrongAnswersAmount;
 	private boolean isAlive;
 	private boolean hasLifes;
+	private boolean wantsToExit;
 	private int lifes;
 	
 	// Konstruktor.
@@ -23,6 +23,7 @@ public class Player
 		correctAnswersAmount = 0;
 		wrongAnswersAmount = 0;
 		lifes = 3;
+		wantsToExit = false;
 	}
 	
 	// Methoden.
@@ -72,11 +73,6 @@ public class Player
 		return lifes;
 	}
 	
-	private void increaseLifes()
-	{
-		lifes += 1;
-	}
-	
 	private void decreaseLifes()
 	{
 		if(lifes == 1)
@@ -106,6 +102,16 @@ public class Player
 			 decreaseLifes();
 		}
 		
+	}
+
+	public void setWantsToExit(boolean wantsToExit) 
+	{
+		this.wantsToExit = wantsToExit;
+	}
+
+	public boolean getWantsToExit() 
+	{
+		return wantsToExit;
 	}
 	
 	

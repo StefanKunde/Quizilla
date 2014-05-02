@@ -10,7 +10,7 @@ public class Menu
 	final String GAME_TITLE_TEXT = "QUIZILLA";
 	
 	
-	public int showMenu()
+	public int show()
 	{
 		Scanner scanner = null;
 		String userChoice = "";

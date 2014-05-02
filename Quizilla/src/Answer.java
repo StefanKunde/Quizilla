@@ -4,7 +4,6 @@ public class Answer
 	// Variablen.
 	private String answer = "";
 	private boolean isCorrect = false;
-	private boolean hasAsked = false;
 	
 	
 	// Konstruktor.

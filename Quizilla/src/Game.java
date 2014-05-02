@@ -5,8 +5,7 @@ public class Game
 {
 	// Variablen.
 	private Questions questions;
-	private Player player;
-	private int maxQuestions;
+	public Player player;
 	public Menu menu;
 	public Highscore highscore;
 	private int currentQuestion;
@@ -36,9 +35,6 @@ public class Game
 	public void startPlay() 
 	{
 		boolean givenAnswer = false;
-		
-		player = new Player();
-		this.addPlayer(player);
 		while( player.getHasLifes() && !questions.isEmpty())
 		{
 			currentQuestion++;
@@ -85,11 +81,11 @@ public class Game
 	{
 		if(givenAnswer)
 		{
-			System.out.println("Antwort ist: (Korrekt)" + "\n");
+			System.out.println("Antwort ist (Korrekt)" + "\n");
 		}
 		else
 		{
-			System.out.println("Antwort ist: (Falsch)" + "\n");
+			System.out.println("Antwort ist (Falsch)" + "\n");
 		}
 	}
 
@@ -105,13 +101,10 @@ public class Game
 	{
 		System.out.println("###########[SPIEL BEGINNT]###########");
 		System.out.println("###########[GOOD LUCK!!!!]###########");
-	}
+	}						
 
 	public void over() 
 	{
-		System.out.println("GAME OVER");
-		// System.out.println( player.score.show() );
-	} 
-	
-	
+		System.out.println("#############[GAME OVER]#############\n");
+	}
 }
