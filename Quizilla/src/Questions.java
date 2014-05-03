@@ -21,8 +21,4 @@ public class Questions extends ArrayList<Question>
 		return hasNext;
 	}
 	
-	
-	
-	
-	
 }

@@ -5,9 +5,7 @@ public class Player
 {
 	// Variablen.
 	private String name;
-	private Score score;
-	private int correctAnswersAmount;
-	private int wrongAnswersAmount;
+	public Score score;
 	private boolean isAlive;
 	private boolean hasLifes;
 	private boolean wantsToExit;
@@ -20,8 +18,6 @@ public class Player
 		isAlive = true;
 		hasLifes = true;
 		score = new Score();
-		correctAnswersAmount = 0;
-		wrongAnswersAmount = 0;
 		lifes = 3;
 		wantsToExit = false;
 	}
@@ -112,6 +108,15 @@ public class Player
 	public boolean getWantsToExit() 
 	{
 		return wantsToExit;
+	}
+
+	public void resetStatus() 
+	{
+		isAlive = true;
+		hasLifes = true;
+		score = new Score();
+		lifes = 3;
+		wantsToExit = false;
 	}
 	
 	

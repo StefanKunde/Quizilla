@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class Game 
@@ -9,6 +10,8 @@ public class Game
 	public Menu menu;
 	public Highscore highscore;
 	private int currentQuestion;
+	public Manual manual;
+	
 	
 	// Konstrukoren.
 	public Game()
@@ -16,25 +19,31 @@ public class Game
 		questions = null;
 		player = null;
 		menu = new Menu();
-		highscore = null;
+		highscore = new Highscore();;
 		currentQuestion = 0;
+		manual = new Manual();
 	}
 	
-	public Game(Questions questions)
+	public Game(Questions questions, Highscore highscore)
 	{
 		this.questions = questions;
-		this.player = null;
+		this.highscore = highscore;
+		player = null;
 		menu = new Menu();
-		highscore = null;
 		currentQuestion = 0;
+		manual = new Manual();		
 	}
 	
 	// Methoden.
+	public void addQuestions(Questions questions)
+	{
+		this.questions = questions;
+	}
 	
-	// Delegatefuntkion
 	public void startPlay() 
 	{
 		boolean givenAnswer = false;
+		player.score.setMaxQuestions(questions.size());
 		while( player.getHasLifes() && !questions.isEmpty())
 		{
 			currentQuestion++;
@@ -43,7 +52,9 @@ public class Game
 			givenAnswer = nextRound(); // Stellt dem Spieler eine zufällige Frage, zeigt ihm Antworten, fragt ihn nach einer Antwort, kontrolliert ob die Antworte richtig oder falsch ist und liefert das Ergebnis als booleschen Wert zurück.
 			player.changeLifes(givenAnswer); // Verändert das Leben des Spieler je nach Antwort (richtig oder falsch).
 			markAnswerAsRightOrWrong(givenAnswer);
+			player.score.addRound(currentQuestion, givenAnswer);
 		}
+		
 	}
 	
 	private void showCurrentQuestionsNumber(int currentQuestion) 
@@ -72,7 +83,7 @@ public class Game
 		questions.remove(randomQuestionId);
 
 		questionsAmount = 0;
-		randomQuestionId = 9;
+		randomQuestionId = 0;
 				
 		return givenAnswer.equals(correctAnswer);
 	}
@@ -81,11 +92,11 @@ public class Game
 	{
 		if(givenAnswer)
 		{
-			System.out.println("Antwort ist (Korrekt)" + "\n");
+			System.out.println("Antwort (Korrekt)" + "\n");
 		}
 		else
 		{
-			System.out.println("Antwort ist (Falsch)" + "\n");
+			System.out.println("Antwort (Falsch)" + "\n");
 		}
 	}
 
@@ -99,12 +110,41 @@ public class Game
 
 	public void goodLuckWishes() 
 	{
-		System.out.println("###########[SPIEL BEGINNT]###########");
-		System.out.println("###########[GOOD LUCK!!!!]###########");
+		System.out.println("###########[SPIEL BEGINNT]############");
+		System.out.println("###########[GOOD LUCK!!!!]############");
 	}						
 
 	public void over() 
 	{
-		System.out.println("#############[GAME OVER]#############\n");
+		System.out.println("#############[GAME OVER]##############\n");
+		highscore.add(player.score);
+	}
+	
+	public void resetGameStatus(Questions questions)
+	{
+		currentQuestion = 0;
+		player.resetStatus();
+		this.questions = questions;
+	}
+	
+	public void askForName()
+	{
+		Scanner scanner = null;
+		String name = "";
+		System.out.print("Geben Sie Ihren Namen ein: ");
+		try
+		{
+			scanner = new Scanner(System.in);
+			name = scanner.nextLine();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Scanner fehler!");
+		}
+		
+		player.setName(name);
+		player.score.setPlayerName(name);
+		
+		
 	}
 }

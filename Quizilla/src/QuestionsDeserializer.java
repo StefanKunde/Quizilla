@@ -10,7 +10,7 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 
-public class QuestionsSerializer 
+public class QuestionsDeserializer 
 {
 	
 	// Variablen.
@@ -25,7 +25,7 @@ public class QuestionsSerializer
 	private boolean answerIsCorrect;
 	
 	// Konstruktor.
-	public QuestionsSerializer()
+	public QuestionsDeserializer()
 	{
 		doc = null;
 		questions = new Questions();
