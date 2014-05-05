@@ -28,7 +28,8 @@ public class Player
 		String givenAnswer = "";
 		int givenAnswerId = 0;
 		Scanner scanner = null;
-		System.out.print("Antwort: ");
+		boolean validUserChoice = false;
+		
 		try
 		{
 			scanner = new Scanner(System.in);
@@ -38,7 +39,20 @@ public class Player
 			System.out.println("Scanner fehler!");
 		}
 	    
-		givenAnswer = scanner.nextLine();
+		
+		while(!validUserChoice)
+		{
+			System.out.print(UiDesigner.createUserRequest(DesignConfig.USER_REQUEST_ANSWER_QUESTION));
+			givenAnswer = scanner.next();
+			validUserChoice = (givenAnswer.equals(String.valueOf(DesignConfig.MENU_NUMBER_ONE)) || (givenAnswer.equals(String.valueOf(DesignConfig.MENU_NUMBER_TWO)) || 
+							  (givenAnswer.equals(String.valueOf(DesignConfig.MENU_NUMBER_THREE)) || (givenAnswer.equals(String.valueOf(DesignConfig.MENU_NUMBER_FOUR))))));
+			
+			if(!validUserChoice)
+			{
+				System.out.println(UiDesigner.createInvalidInputMsg(DesignConfig.INVALID_ANSWER));
+			}
+		}
+		
 		givenAnswerId = Integer.parseInt(givenAnswer);
 		
 	    return question.getAnswerById(givenAnswerId);
