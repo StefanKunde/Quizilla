@@ -47,11 +47,12 @@ public class Game
 		while( player.getHasLifes() && !questions.isEmpty())
 		{
 			currentQuestion++;
-			showCurrentQuestionsNumber(currentQuestion);
-			showLifes(player);
+			System.out.println(UiDesigner.createStatus(currentQuestion, player.getLifes()));
 			givenAnswer = nextRound(); // Stellt dem Spieler eine zufällige Frage, zeigt ihm Antworten, fragt ihn nach einer Antwort, kontrolliert ob die Antworte richtig oder falsch ist und liefert das Ergebnis als booleschen Wert zurück.
 			player.changeLifes(givenAnswer); // Verändert das Leben des Spieler je nach Antwort (richtig oder falsch).
 			markAnswerAsRightOrWrong(givenAnswer);
+			System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_DEFAULT, DesignConfig.BORDER_CHAR_DEFAULT));
+			System.out.println(UiDesigner.createEmptyLine());
 			player.score.addRound(currentQuestion, givenAnswer);
 		}
 		
@@ -76,8 +77,11 @@ public class Game
 		int questionsAmount = questions.size();
 		int randomQuestionId = random.nextInt( questionsAmount );
 		
+		System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_DELIMITING, DesignConfig.BORDER_CHAR_DEFAULT));
 		questions.get(randomQuestionId).askQuestion();
+		System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_DELIMITING, DesignConfig.BORDER_CHAR_DEFAULT));
 		questions.get(randomQuestionId).showAnswers();
+		System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_DELIMITING, DesignConfig.BORDER_CHAR_DEFAULT));
 		givenAnswer = player.answerQuestion(questions.get(randomQuestionId));
 		correctAnswer = questions.get(randomQuestionId).getCorrectAnswer();
 		questions.remove(randomQuestionId);
@@ -92,31 +96,32 @@ public class Game
 	{
 		if(givenAnswer)
 		{
-			System.out.println("Antwort (Korrekt)" + "\n");
+			System.out.println(UiDesigner.createInfo(DesignConfig.INFO_ANSWER_CORRECT));
 		}
 		else
 		{
-			System.out.println("Antwort (Falsch)" + "\n");
+			System.out.println(UiDesigner.createInfo(DesignConfig.INFO_ANSWER_WRONG));
 		}
 	}
 
-	public void showLifes(Player player) 
+	public void printStartMessage() 
 	{
-		System.out.print("[");
-		System.out.print("Leben: ");
-		System.out.print(player.getLifes() + "");
-		System.out.println("]");
-	}
-
-	public void goodLuckWishes() 
-	{
-		System.out.println("###########[SPIEL BEGINNT]############");
-		System.out.println("###########[GOOD LUCK!!!!]############");
+		System.out.println(UiDesigner.createEmptyLine());
+		System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_GAME_START));
+		System.out.println(UiDesigner.createEmptyLine());
 	}						
 
 	public void over() 
 	{
-		System.out.println("#############[GAME OVER]##############\n");
+		if(player.score.getResult() == 100)
+		{
+			System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_CONGRATULATIONS));
+			System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_WON));
+		}
+		else
+		{
+			System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_LOST));
+		}
 		highscore.add(player.score);
 	}
 	
@@ -131,20 +136,29 @@ public class Game
 	{
 		Scanner scanner = null;
 		String name = "";
-		System.out.print("Geben Sie Ihren Namen ein: ");
-		try
-		{
-			scanner = new Scanner(System.in);
-			name = scanner.nextLine();
-		}
-		catch(Exception e)
-		{
-			System.out.println("Scanner fehler!");
-		}
+		boolean vaildName = false;
+		System.out.print(UiDesigner.createUserRequest(DesignConfig.USER_REQUEST_TEXT_NAME));
 		
+		scanner = new Scanner(System.in);
+		while(!vaildName)
+		{
+			name = scanner.next();
+			vaildName = (name.length() >= 1) && (name.length() <= 15);
+			if(!vaildName)
+			{
+				System.out.println(UiDesigner.createInvalidInputMsg(DesignConfig.INVALID_NAME_MSG));
+				System.out.print(UiDesigner.createUserRequest(DesignConfig.USER_REQUEST_TEXT_NAME));
+			}
+		}
+
 		player.setName(name);
 		player.score.setPlayerName(name);
 		
 		
+	}
+
+	public void showGoodByeMsg() 
+	{
+		System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_GOOD_BYE));		
 	}
 }
