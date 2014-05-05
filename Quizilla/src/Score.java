@@ -22,12 +22,14 @@ public class Score implements Comparable<Score>, Serializable
 	// Methoden.
 	public void show()
 	{
-		System.out.println("##############[ERGEBNIS]##############");
-		System.out.println("Fragen Gesamt: " + maxQuestions);
-		System.out.println("Beantwortete Fragen: " + answeredQuestionsAmount );
-		System.out.println("Davon richtig: " + correctAnswersAmount );
-		System.out.println("Ergebnis: " + result + "%");
-		System.out.println("##############[ERGEBNIS]##############");
+		System.out.println(UiDesigner.createEmptyLine());
+		System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_RESULT));
+		System.out.println(UiDesigner.createResultLine(DesignConfig.INFO_QUESTIONS_OVERALL + maxQuestions));
+		System.out.println(UiDesigner.createResultLine(DesignConfig.INFO_ANSWERED_QUESTIONS + answeredQuestionsAmount));
+		System.out.println(UiDesigner.createResultLine(DesignConfig.INFO_CORRECT_ANSWERED_QUESTIONS + correctAnswersAmount));
+		System.out.println(UiDesigner.createResultLine(DesignConfig.INFO_RESULT + result + DesignConfig.SIGN_FOR_RESULT));
+		System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_RESULT));
+		UiDesigner.createWaitForUserLine();
 	}
 
 	public void addRound(int currentQuestion, boolean givenAnswer) 
