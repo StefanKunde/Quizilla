@@ -44,8 +44,38 @@ public class Answer
 	
 	public void showAnswers(int id)
 	{
-		System.out.print(id + ". ");
-		System.out.println(answer);
+		String answerTmp = "";
+		switch(id)
+		{
+			case DesignConfig.MENU_NUMBER_ONE:
+				answerTmp += DesignConfig.MENU_ANSWER_TEXT;
+				answerTmp += DesignConfig.MENU_NUMBER_ONE_TEXT;
+				answerTmp += answer;
+				System.out.println(UiDesigner.createAnswer(answerTmp));
+				break;
+			case DesignConfig.MENU_NUMBER_TWO:
+				answerTmp += DesignConfig.MENU_ANSWER_TEXT;
+				answerTmp += DesignConfig.MENU_NUMBER_TWO_TEXT;
+				answerTmp += answer;
+				System.out.println(UiDesigner.createAnswer(answerTmp));
+				break;
+			case DesignConfig.MENU_NUMBER_THREE:
+				answerTmp += DesignConfig.MENU_ANSWER_TEXT;
+				answerTmp += DesignConfig.MENU_NUMBER_THREE_TEXT;
+				answerTmp += answer;
+				System.out.println(UiDesigner.createAnswer(answerTmp));
+				break;
+			case DesignConfig.MENU_NUMBER_FOUR:
+				answerTmp += DesignConfig.MENU_ANSWER_TEXT;
+				answerTmp += DesignConfig.MENU_NUMBER_FOUR_TEXT;
+				answerTmp += answer;
+				System.out.println(UiDesigner.createAnswer(answerTmp));
+				break;
+			default:
+				break;
+		}
+		//System.out.print(id + ". ");
+		//System.out.println(answer);
 	}
 	
 	
