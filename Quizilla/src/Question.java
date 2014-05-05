@@ -51,8 +51,7 @@ public class Question
 	public void askQuestion()
 	{
 		// Frage printen
-		System.out.print("Frage: ");
-		System.out.println(question);
+		System.out.println(UiDesigner.createQuestion(question));
 	}
 	
 	public void showAnswers()
