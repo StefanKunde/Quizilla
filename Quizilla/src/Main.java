@@ -1,58 +1,56 @@
 
 import java.io.File;
+import java.io.IOException;
 
 public class Main 
 {
 	public static void main(String[] args)
 	{	
 		// Variablen.
-		final File XML_QUESTIONS_FILE = new File("Questions\\Fragen.xml");
-		final String FILE_NAME_HIGHSCORE = "Highscore.data";
-		
-		DeserializeGeneric<Highscore> deSerHighscore = new DeserializeGeneric<Highscore>(FILE_NAME_HIGHSCORE);
-		Highscore highscore = Highscore.create( deSerHighscore, FILE_NAME_HIGHSCORE);
+		DeserializeGeneric<Highscore> deSerHighscore = new DeserializeGeneric<Highscore>(DesignConfig.FILE_NAME_HIGHSCORE);
+		Highscore highscore = Highscore.create( deSerHighscore, DesignConfig.FILE_NAME_HIGHSCORE);
 		QuestionsDeserializer questionsDeserializer = new QuestionsDeserializer();
-		Questions questions = questionsDeserializer.readQuestionsFromXml(XML_QUESTIONS_FILE);
+		Questions questions ;
+		questions = questionsDeserializer.readQuestionsFromXml(new File(DesignConfig.FILE_XML_QUESTIONS_FILE));
 		SerializeGeneric<Highscore> serHighscore = null;
 		Player player = new Player();
 		Game game = new Game( (Questions) questions.clone(), highscore );
 		
-		
-		// settings.loadDefault(); @ TODO noch erstellen.
 		int userChoice = 0;
-		
 		game.addPlayer(player);
+		
 		
 		while(!game.player.getWantsToExit())
 		{
 			userChoice = game.menu.show();
 			switch(userChoice)
 			{
-				case 1: // Spielen
+				case DesignConfig.MENU_NUMBER_ONE: // Spielen
 					game.askForName();
-					game.goodLuckWishes();
+					System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_TITLES, DesignConfig.BORDER_CHAR_DEFAULT));
+					game.printStartMessage();
 					game.startPlay();
-					game.over();
 					game.player.score.save();
-					serHighscore = new SerializeGeneric<Highscore>(FILE_NAME_HIGHSCORE, highscore); // Highscore-object serialisieren.
-					serHighscore.serialize();														// Highscore-object serialisieren.
-					game.player.score.show(); //@ TODO
+					game.over(); 
+					serHighscore = new SerializeGeneric<Highscore>(DesignConfig.FILE_NAME_HIGHSCORE, highscore); // Initialisieren des Highscore Objektes.
+					serHighscore.serialize(); // Serialisierung des Highscore Objektes..
+					game.player.score.show(); // Ergebnis printen.
 					break;
 					
-				case 2: // Anleitung
+				case DesignConfig.MENU_NUMBER_TWO: // Anleitung
+					System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_TITLES, DesignConfig.BORDER_CHAR_DEFAULT));
 					game.manual.show(); // @ TODO: Die Anleitung Muss noch ausgearbeitet werden.
 					break;
 					
-				case 3: // Highscore
+				case DesignConfig.MENU_NUMBER_THREE: // Highscore
+					System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_TITLES, DesignConfig.BORDER_CHAR_DEFAULT));
 					game.highscore.show(); // @TODO Noch erstellen.
 					break;
 					
-				case 4: // Spiel beenden
+				case DesignConfig.MENU_NUMBER_FOUR: // Spiel beenden
 					game.player.setWantsToExit(true);
-					
-					System.out.println("#############[Good Bye]##############");
+					game.showGoodByeMsg();
 					break;
-					
 				default:
 			}
 			
