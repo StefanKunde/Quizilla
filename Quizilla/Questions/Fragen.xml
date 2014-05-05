@@ -62,4 +62,144 @@
 		<Antwort>Flush</Antwort> 
 		<Antwort correct="true">Royal Flush</Antwort> 
 	</Frage>
+	
+	<Frage value="Wie hiess der erste amerikanische Präsident?">
+		<Antwort>Bush</Antwort> 
+		<Antwort>Carter</Antwort> 
+		<Antwort>Clinton</Antwort> 
+		<Antwort correct="true">Washington</Antwort> 
+	</Frage>
+	
+	<Frage value="Was bedeutet ABS?">
+		<Antwort>Ampel blendet stark</Antwort> 
+		<Antwort>Anti Banden System</Antwort> 
+		<Antwort>Anti Blatt Synonym</Antwort> 
+		<Antwort correct="true">Anti Blockier System</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie heisst das rote Tuch beim Stierkampf?">
+		<Antwort>Nada</Antwort> 
+		<Antwort>Papa</Antwort> 
+		<Antwort>Saga</Antwort> 
+		<Antwort correct="true">Kapa</Antwort> 
+	</Frage>
+	
+	<Frage value="Was ist Kernfusion?">
+		<Antwort>Ein Putzmittel</Antwort> 
+		<Antwort>Das Zusammenführen von Wasserstoff und Helium</Antwort> 
+		<Antwort>Die neue japanische Nationalhymne</Antwort> 
+		<Antwort correct="true">Die Verschmelzung von Atomkernen</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie viele Steine hat ein Damespiel?">
+		<Antwort>20</Antwort> 
+		<Antwort>28</Antwort> 
+		<Antwort>16</Antwort> 
+		<Antwort correct="true">24</Antwort> 
+	</Frage>
+	
+	<Frage value="Was bezeichnet die Apeninnenhalbinsel?">
+		<Antwort>Ägypten</Antwort> 
+		<Antwort>Sardismus</Antwort> 
+		<Antwort correct="true">Italien</Antwort> 
+		<Antwort>Griechenland</Antwort> 
+	</Frage>
+	
+	<Frage value="Wo lebten die Inkas?">
+		<Antwort>Paris</Antwort> 
+		<Antwort>München</Antwort> 
+		<Antwort correct="true">Peru</Antwort> 
+		<Antwort>Bern</Antwort> 
+	</Frage>
+	
+	<Frage value="Wann wurde bei uns das Frauenstimmrecht eingeführt?">
+		<Antwort>1926</Antwort> 
+		<Antwort>2000</Antwort> 
+		<Antwort correct="true">1971</Antwort> 
+		<Antwort>1845</Antwort> 
+	</Frage>
+	
+	<Frage value="Wann wurde die UNO gegründet?">
+		<Antwort>1975</Antwort> 
+		<Antwort>1925</Antwort> 
+		<Antwort correct="true">1945</Antwort> 
+		<Antwort>1965</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie heisst das Fussballstadion von Real Madrid?">
+		<Antwort>Lotsamer</Antwort> 
+		<Antwort>Moabit</Antwort> 
+		<Antwort correct="true">Maracana</Antwort> 
+		<Antwort>Badega</Antwort> 
+	</Frage>
+	
+	<Frage value="Welches Musikinstrument spielt Woody Allen hervorragend?">
+		<Antwort>Trompete</Antwort> 
+		<Antwort correct="true">Saxophon</Antwort> 
+		<Antwort>Klavier</Antwort> 
+		<Antwort>Buschtrommel</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie war der Mädchenenname von Schillers Frau?">
+		<Antwort>Brigitte von Helsinki</Antwort> 
+		<Antwort correct="true">Charlotte von Kalb</Antwort> 
+		<Antwort>Magdalena die 8.</Antwort> 
+		<Antwort>Juliana aus Tirol</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie viele Flügel hat eine Biene?">
+		<Antwort>12</Antwort> 
+		<Antwort correct="true">8</Antwort> 
+		<Antwort>4</Antwort> 
+		<Antwort>2</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie nennt man eine Reitsport-Mannschaft?">
+		<Antwort>Gang</Antwort> 
+		<Antwort correct="true">Crew</Antwort> 
+		<Antwort>Bande</Antwort> 
+		<Antwort>Band</Antwort> 
+	</Frage>
+	
+	<Frage value="Zu welcher Sportart gehört der Begriff „Damengambil“?">
+		<Antwort>Frauenfußball</Antwort> 
+		<Antwort correct="true">Schach</Antwort> 
+		<Antwort>Reiten</Antwort> 
+		<Antwort>Bowling</Antwort> 
+	</Frage>
+	
+	<Frage value="Welchen Beruf hatte der Erfinder der Guillotine?">
+		<Antwort correct="true">Arzt</Antwort> 
+		<Antwort>Henker</Antwort> 
+		<Antwort>König</Antwort> 
+		<Antwort>Krieger</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie heisst jede einzelne Spitze eines Hirschgeweihs?">
+		<Antwort correct="true">Spitz</Antwort> 
+		<Antwort>Geyl</Antwort> 
+		<Antwort>Heiss</Antwort> 
+		<Antwort>Secksyl</Antwort> 
+	</Frage>
+	
+	<Frage value="Wie viele Saiten hat eine Mandoline?">
+		<Antwort correct="true">12</Antwort> 
+		<Antwort>38</Antwort> 
+		<Antwort>3</Antwort> 
+		<Antwort>9</Antwort> 
+	</Frage>
+	
+	<Frage value="Welche Monate sind nach Menschen bennant?">
+		<Antwort correct="true">Januar und August</Antwort> 
+		<Antwort>Mai und Juni</Antwort> 
+		<Antwort>Juli und Februar</Antwort> 
+		<Antwort>März und Oktober</Antwort> 
+	</Frage>
+	
+	<Frage value="Welche Farbe ist in islamischen Ländern die Farbe der Trauer?">
+		<Antwort correct="true">Weiss</Antwort> 
+		<Antwort>Blau</Antwort> 
+		<Antwort>Lila</Antwort> 
+		<Antwort>Grau</Antwort> 
+	</Frage>
 </Fragen>
