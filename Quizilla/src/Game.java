@@ -48,8 +48,8 @@ public class Game
 		{
 			currentQuestion++;
 			System.out.println(UiDesigner.createStatus(currentQuestion, player.getLifes()));
-			givenAnswer = nextRound(); // Stellt dem Spieler eine zufällige Frage, zeigt ihm Antworten, fragt ihn nach einer Antwort, kontrolliert ob die Antworte richtig oder falsch ist und liefert das Ergebnis als booleschen Wert zurück.
-			player.changeLifes(givenAnswer); // Verändert das Leben des Spieler je nach Antwort (richtig oder falsch).
+			givenAnswer = nextRound(); // Stellt dem Spieler eine zufï¿½llige Frage, zeigt ihm Antworten, fragt ihn nach einer Antwort, kontrolliert ob die Antworte richtig oder falsch ist und liefert das Ergebnis als booleschen Wert zurï¿½ck.
+			player.changeLifes(givenAnswer); // Verï¿½ndert das Leben des Spieler je nach Antwort (richtig oder falsch).
 			markAnswerAsRightOrWrong(givenAnswer);
 			System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_DEFAULT, DesignConfig.BORDER_CHAR_DEFAULT));
 			System.out.println(UiDesigner.createEmptyLine());
@@ -143,7 +143,7 @@ public class Game
 		while(!vaildName)
 		{
 			name = scanner.next();
-			vaildName = (name.length() >= 1) && (name.length() <= 15);
+			vaildName = (name.length() >= 1) && (name.length() <= 15); // @ TODO: Konstentan einsetzen.
 			if(!vaildName)
 			{
 				System.out.println(UiDesigner.createInvalidInputMsg(DesignConfig.INVALID_NAME_MSG));
