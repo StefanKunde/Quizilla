@@ -113,7 +113,7 @@ public class Game
 
 	public void over() 
 	{
-		if(player.score.getResult() == 100)
+		if(player.score.getResult() == 100) // @ TODO: MAX_RESULT_.. adden
 		{
 			System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_CONGRATULATIONS));
 			System.out.println(UiDesigner.createTitle(DesignConfig.TITLE_WON));
