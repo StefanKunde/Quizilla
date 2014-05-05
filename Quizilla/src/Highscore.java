@@ -11,12 +11,9 @@ import java.util.Collections;
 
 
 // @TODO Se- und Deserilisation
-public class Highscore<T> extends ArrayList<Score> implements Serializable
+public class Highscore extends ArrayList<Score> implements Serializable
 {
 	private static final long serialVersionUID = -8405218090412486870L;
-	private final int MAX_PLAYER_ON_LIST = 10;
-	
-	
 	
 	
 	public Highscore()
@@ -36,22 +33,9 @@ public class Highscore<T> extends ArrayList<Score> implements Serializable
 	public void show() 
 	{
 		sort();
-		
-		System.out.println("#############[HIGHSCORE]##############");
-		System.out.println("-----" + "Platz" + "-----" + "Name" + "-----" + "Ergebnis" + "-----");
-		for(int i = 0; i < MAX_PLAYER_ON_LIST; i++)
-		{
-			if( i < this.size() )
-			{
-				System.out.println("-----" + (i+1) + ".   " + "-----" + this.get(i).getPlayerName() + "-----" + this.get(i).getResult() + "%" + "-----");		     
-			}
-			else
-			{
-				System.out.println("-----" + (i+1) + ".----" + "LEER" + "-----" + "LEER" + "-----");
-			}
-		}
-		System.out.println("#############[HIGHSCORE]##############");
-		
+		System.out.println(UiDesigner.createEmptyLine());
+		System.out.println(UiDesigner.createHighscoreList(this));
+		UiDesigner.createWaitForUserLine();
 	}
 
 	public static Highscore create(DeserializeGeneric<Highscore> deser_gen, String fILE_NAME_HIGHSCORE) 
