@@ -142,7 +142,7 @@ public class Game
 		scanner = new Scanner(System.in);
 		while(!vaildName)
 		{
-			name = scanner.next();
+			name = scanner.nextLine();
 			vaildName = (name.length() >= 1) && (name.length() <= 15);
 			if(!vaildName)
 			{
