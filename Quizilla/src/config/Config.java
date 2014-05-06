@@ -63,7 +63,7 @@ public final class Config
 	public static final int _PUFFER_LIFE_LEFT = _MAX_ROW_LENGTH - 20;
 	public static final int _PUFFER_QUESTION_AMOUNT = 7;
 	public static final int _PUFFER_USER_REQUEST = 8;
-	public static final int _PUFFER_USER_INFO = (_MAX_ROW_LENGTH / 2);
+	public static final int _PUFFER_USER_INFO = 25;
 	public static final int _PUFFER_MENU = 5;
 	public static final int _PUFFER_RESULT = 15;
 	public static final int _PUFFER_HIGHSCORE_RANK = 10;
