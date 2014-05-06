@@ -1,53 +1,74 @@
 
+import game.Game;
+import game.Highscore;
+import game.Manual;
+import game.Player;
+import game.Questions;
+
 import java.io.File;
 import java.io.IOException;
 
+import serialization.Deserialize;
+import serialization.QuestionsDeserializer;
+import serialization.Serialize;
+import config.Config;
+import design.Designer;
+
+//! Diese Klasse behinhaltet die Main-Methode und führt das Spiel in Ihr aus.
+/*  
+ * 
+ * @author Stefan Kunde
+ * @date 01.05.2014
+ * @version 1.0
+ * 
+ */
 public class Main 
 {
 	public static void main(String[] args)
 	{	
 		// Variablen.
-		DeserializeGeneric<Highscore> deSerHighscore = new DeserializeGeneric<Highscore>(DesignConfig.FILE_NAME_HIGHSCORE);
-		Highscore highscore = Highscore.create( deSerHighscore, DesignConfig.FILE_NAME_HIGHSCORE);
+		Deserialize<Highscore> deSerHighscore = new Deserialize<Highscore>(Config._FILE_NAME_HIGHSCORE);
+		Highscore highscore = Highscore.create( deSerHighscore );
 		QuestionsDeserializer questionsDeserializer = new QuestionsDeserializer();
-		Questions questions ;
-		questions = questionsDeserializer.readQuestionsFromXml(new File(DesignConfig.FILE_XML_QUESTIONS_FILE));
-		SerializeGeneric<Highscore> serHighscore = null;
+		Questions questions;
+		Manual manual = new Manual ( new File(Config._FILE_MANUAL_PATH));
+		questions = questionsDeserializer.readQuestionsFromXml(new File(Config._FILE_XML_QUESTIONS_FILE));
+		Serialize<Highscore> serHighscore = null;
 		Player player = new Player();
-		Game game = new Game( (Questions) questions.clone(), highscore );
+		Game game = new Game( (Questions) questions.clone(), highscore, manual );
 		
 		int userChoice = 0;
 		game.addPlayer(player);
 		
-		
+		// Das Spiel zeigt solange das Menü wieder, bis der Spieler es beenden möchte.
 		while(!game.player.getWantsToExit())
 		{
 			userChoice = game.menu.show();
 			switch(userChoice)
 			{
-				case DesignConfig.MENU_NUMBER_ONE: // Spielen
+				case Config._MENU_NUMBER_ONE_INT: // Spiel starten
 					game.askForName();
-					System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_TITLES, DesignConfig.BORDER_CHAR_DEFAULT));
+					System.out.println(Designer.createDelimiterLine(Config._FILL_SPACE_TITLES, Config._BORDER_DEFAULT));
 					game.printStartMessage();
 					game.startPlay();
-					game.player.score.save();
+					game.player.score.calculateResult();
 					game.over(); 
-					serHighscore = new SerializeGeneric<Highscore>(DesignConfig.FILE_NAME_HIGHSCORE, highscore); // Initialisieren des Highscore Objektes.
-					serHighscore.serialize(); // Serialisierung des Highscore Objektes..
+					serHighscore = new Serialize<Highscore>(Config._FILE_NAME_HIGHSCORE, highscore); // Initialisieren des Highscore Objektes.
+					serHighscore.serialize(); // Serialisierung des Highscore Objektes.
 					game.player.score.show(); // Ergebnis printen.
 					break;
 					
-				case DesignConfig.MENU_NUMBER_TWO: // Anleitung
-					System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_TITLES, DesignConfig.BORDER_CHAR_DEFAULT));
-					game.manual.show(); // @ TODO: Die Anleitung Muss noch ausgearbeitet werden.
+				case Config._MENU_NUMBER_TWO_INT: // Anleitung
+					System.out.println(Designer.createDelimiterLine(Config._FILL_SPACE_TITLES, Config._BORDER_DEFAULT));
+					game.manual.show();
 					break;
 					
-				case DesignConfig.MENU_NUMBER_THREE: // Highscore
-					System.out.println(UiDesigner.createDelimiterLine(DesignConfig.FILL_CHAR_FOR_TITLES, DesignConfig.BORDER_CHAR_DEFAULT));
-					game.highscore.show(); // @TODO Noch erstellen.
+				case Config._MENU_NUMBER_THREE_INT: // Highscore
+					System.out.println(Designer.createDelimiterLine(Config._FILL_SPACE_TITLES, Config._BORDER_DEFAULT));
+					game.highscore.show(); // Highscore printen.
 					break;
 					
-				case DesignConfig.MENU_NUMBER_FOUR: // Spiel beenden
+				case Config._MENU_NUMBER_FOUR_INT: // Spiel beenden
 					game.player.setWantsToExit(true);
 					game.showGoodByeMsg();
 					break;
