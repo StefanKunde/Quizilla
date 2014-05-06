@@ -75,7 +75,7 @@ public class Game
     */
 	public void startPlay() 
 	{
-		int test = questions.size();
+		
 		boolean givenAnswer = false;
 		if(questions.size() > Config._MAX_QUESTIONS_EACH_GAME)
 		{
@@ -83,7 +83,7 @@ public class Game
 		}
 		else
 		{
-			player.score.setMaxQuestions( test );
+			player.score.setMaxQuestions( questions.size() );
 		}
 		
 		// Wenn der Spieler noch Leben hat, es überhaupt noch Fragen gibt UND der Spieler noch nicht die maximal eingestellte Fragenanzahl erreicht hat,
