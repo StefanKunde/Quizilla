@@ -114,6 +114,7 @@ public class Game
     */
 	private boolean nextRound()
 		{
+			boolean isCorrectAnswer = false;
 			String givenAnswer = "";
 			String correctAnswer = "";
 			Random random = new Random();
@@ -128,12 +129,18 @@ public class Game
 			System.out.println(Designer.createDelimiterLine(Config._FILL_SPACE_DELIMITING, Config._BORDER_DEFAULT));
 			givenAnswer = player.answerQuestion(questions.get(randomQuestionId));
 			correctAnswer = questions.get(randomQuestionId).getCorrectAnswer();
+			isCorrectAnswer = givenAnswer.equals(correctAnswer);
+			
+			if(!isCorrectAnswer)
+			{
+				System.out.println(Designer.createInfo("Richtige Antwort: " + correctAnswer));
+			}
 			questions.remove(randomQuestionId);
 
 			questionsAmount = 0;
 			randomQuestionId = 0;
 					
-			return givenAnswer.equals(correctAnswer);
+			return isCorrectAnswer;
 		}
 
 	//! Fügt dem Spiel ein Player-Objekt hinzu.
