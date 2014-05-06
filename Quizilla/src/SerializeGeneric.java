@@ -9,31 +9,35 @@ public class SerializeGeneric<T>
 
 	public SerializeGeneric(String fileName, T serData) 
 	{
-		super();
 		this.fileName = fileName;
 		this.serializeData = serData;
 	}
-
+	
+	// GETTER fileName.
 	public String getFileName() 
 	{
 		return fileName;
 	}
-
+	
+	// SETTER fileName
 	public void setFileName(String fileName) {
 		
 		this.fileName = fileName;
 	}
-
+	
+	// GETTER serData
 	public T getSerData() 
 	{
 		return serializeData;
 	}
 
+	// SETTER serData
 	public void setSerData(T serData) 
 	{
 		this.serializeData = serData;
 	}
-
+	
+	
 	public void serialize() 
 	{
 		FileOutputStream fos = null;
