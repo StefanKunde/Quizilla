@@ -30,7 +30,7 @@ public final class Config
 	
 	// MAX Einstellungen.
 	public static final int _MAX_ROW_LENGTH = 78;
-	public static final int _MAX_QUESTIONS_EACH_GAME = 29; // Wenn man diesen Wert ändert, bugt das Ergebnis.
+	public static final int _MAX_QUESTIONS_EACH_GAME = 25;
 	public static final int _MAX_USER_NAME_LENGTH = 12;
 	public static final int _MAX_LENGTH_QUESTION = 40;
 	public static final int _MAX_TEXT_LENGTH_EACH_LINE = _MAX_ROW_LENGTH - _MIN_PUFFER_EACH_LINE;

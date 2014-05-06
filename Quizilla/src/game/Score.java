@@ -105,7 +105,7 @@ public class Score implements Comparable<Score>, Serializable
 	{
 		System.out.println(Designer.createEmptyLine());
 		System.out.println(Designer.createTitle(Config._TITLE_RESULT));
-		System.out.println(Designer.createResultLine(Config._INFO_QUESTIONS_OVERALL_TEXT + (maxQuestions + 1))); // + 1, weil maxQuestions die size der Liste als int dargestellt ist.
+		System.out.println(Designer.createResultLine(Config._INFO_QUESTIONS_OVERALL_TEXT + maxQuestions)); // + 1, weil maxQuestions die size der Liste als int dargestellt ist.
 		System.out.println(Designer.createResultLine(Config._INFO_ANSWERED_QUESTIONS_TEXT + answeredQuestionsAmount));
 		System.out.println(Designer.createResultLine(Config._INFO_CORRECT_ANSWERED_QUESTIONS_TEXT + correctAnswersAmount));
 		System.out.println(Designer.createResultLine(Config._INFO_RESULT_TEXT + result + Config._SIGN_FOR_RESULT));

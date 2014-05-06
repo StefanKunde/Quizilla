@@ -40,7 +40,6 @@ public class Game
 	{
 		this.questions = questions;
 		this.highscore = highscore;
-
 		this.manual = manual;
 		player = null;
 		menu = new Menu();
@@ -76,6 +75,7 @@ public class Game
     */
 	public void startPlay() 
 	{
+		int test = questions.size();
 		boolean givenAnswer = false;
 		if(questions.size() > Config._MAX_QUESTIONS_EACH_GAME)
 		{
@@ -83,13 +83,12 @@ public class Game
 		}
 		else
 		{
-			player.score.setMaxQuestions(questions.size());
+			player.score.setMaxQuestions( test );
 		}
-		
 		
 		// Wenn der Spieler noch Leben hat, es überhaupt noch Fragen gibt UND der Spieler noch nicht die maximal eingestellte Fragenanzahl erreicht hat,
 		// wird eine neue Frage gestellt.
-		while( player.getHasLifes() && !questions.isEmpty() && (currentQuestion < Config._MAX_QUESTIONS_EACH_GAME) )
+		while( player.getHasLifes() && !questions.isEmpty() && (currentQuestion < Config._MAX_QUESTIONS_EACH_GAME) ) 
 		{
 			currentQuestion++;
 			System.out.println(Designer.createStatus(currentQuestion, player.getLifes()));
@@ -118,8 +117,8 @@ public class Game
 			String givenAnswer = "";
 			String correctAnswer = "";
 			Random random = new Random();
-			
 			int questionsAmount = questions.size();
+			
 			int randomQuestionId = random.nextInt( questionsAmount );
 			
 			System.out.println(Designer.createDelimiterLine(Config._FILL_SPACE_DELIMITING, Config._BORDER_DEFAULT));
