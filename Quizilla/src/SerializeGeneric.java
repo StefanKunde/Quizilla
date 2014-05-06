@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 public class SerializeGeneric<T> 
 {
+	// Variablen.
 	private String fileName;
 	private T serializeData;
-
+	
+	// Konstruktor.
 	public SerializeGeneric(String fileName, T serData) 
 	{
 		this.fileName = fileName;
