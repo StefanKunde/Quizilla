@@ -32,6 +32,12 @@ public class Score implements Comparable<Score>, Serializable
 		playerName = "";
 	}
 	
+	public Score(String name, int result)
+	{
+		this.playerName = name;
+		this.result = result;
+	}
+	
 	// Methoden.
 	
 	// SETTER result

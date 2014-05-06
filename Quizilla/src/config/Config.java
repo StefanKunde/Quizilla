@@ -16,7 +16,7 @@ public final class Config
 	private Config() {}
 	
 	/*
-	 * #####################EINSTELLUNGEN#####################: 
+	 * #####################EINSTELLUNGEN#####################
 	*/
 	
 	// Dateipfade.
@@ -29,8 +29,8 @@ public final class Config
 	public static final int _MIN_ROW_LENGTH = 40;
 	
 	// MAX Einstellungen.
-	public static final int _MAX_ROW_LENGTH = 100;
-	public static final int _MAX_QUESTIONS_EACH_GAME = 30; // Wenn man diesen Wert ändert, bugt das Ergebnis.
+	public static final int _MAX_ROW_LENGTH = 78;
+	public static final int _MAX_QUESTIONS_EACH_GAME = 29; // Wenn man diesen Wert ändert, bugt das Ergebnis.
 	public static final int _MAX_USER_NAME_LENGTH = 12;
 	public static final int _MAX_LENGTH_QUESTION = 40;
 	public static final int _MAX_TEXT_LENGTH_EACH_LINE = _MAX_ROW_LENGTH - _MIN_PUFFER_EACH_LINE;
@@ -39,7 +39,7 @@ public final class Config
 	public static final int _MAX_PLAYER_ON_HIGHSCORE_LIST = 10;
 	public static final int _MAX_HIGHSCORES_ON_LIST = 10;
 	public static final int _MAX_RESULT = 100;
-	public static final int _MAX_MANUAL_TEXT_LENGTH_EACH_ROW = 80; 
+	public static final int _MAX_MANUAL_TEXT_LENGTH_EACH_ROW = _MAX_ROW_LENGTH - 10; 
 	
 	// Diverse andere. -> In eine der bestehenden Kategorien passen diese Einstellungen nicht direkt rein.
 	public static final char _FREE_SPACE_CHAR = ' ';
@@ -60,17 +60,17 @@ public final class Config
 	public static final int _PUFFER_TITLE = 0;
 	public static final int _PUFFER_QUESTION = 6;
 	public static final int _PUFFER_ANSWER = 2;
-	public static final int _PUFFER_LIFE_LEFT = 84;
+	public static final int _PUFFER_LIFE_LEFT = _MAX_ROW_LENGTH - 20;
 	public static final int _PUFFER_QUESTION_AMOUNT = 7;
 	public static final int _PUFFER_USER_REQUEST = 8;
-	public static final int _PUFFER_USER_INFO = 40;
+	public static final int _PUFFER_USER_INFO = (_MAX_ROW_LENGTH / 2);
 	public static final int _PUFFER_MENU = 5;
 	public static final int _PUFFER_RESULT = 15;
 	public static final int _PUFFER_HIGHSCORE_RANK = 10;
 	public static final int _PUFFER_HIGHSCORE_NAME = 30;
 	public static final int _PUFFER_HIGHSCORE_RESULT = 60;
 	public static final int _PUFFER_INVALID_INPUT = 0;
-	public final static int _PUFFER__MANUAL_LINE = 10;
+	public final static int _PUFFER_MANUAL_LINE = 5;
 	
 	// Text Umhüllungszeichen und Einstellungen.
 	public static final char _OPEN_TITLE_CHAR = '[';
@@ -144,7 +144,7 @@ public final class Config
 	// Titeltexte.
 	public static final String _TITLE_HIGHSCORE = "HIGHSCORE";
 	public static final String _TITLE_MANUAL = "ANLEITUNG";
-	public static final String _TITLE_QUIZILLA = "QUIZILA";
+	public static final String _TITLE_QUIZILLA = "QUIZILLA";
 	public static final String _TITLE_GAME_START = "SPIEL BEGINNT";
 	public static final String _TITLE_GOOD_LUCK = "GOOD LUCK!";
 	public static final String _TITLE_GOOD_BYE = "AUF WIEDERSEHEN";

@@ -226,11 +226,11 @@ public final class Designer
     */
 	public static String createInfo(String info)
 	{
-		String answerLine = createLine(info, 
+		String infoTmp = createLine(info, 
 					Config._FILL_SPACE_INFO, Config._OPEN_INFO_CHAR, 
 					Config._CLOSE_INFO_CHAR, Config._BORDER_INFO, 
 					Config._PUFFER_USER_INFO, false);
-		return answerLine;
+		return infoTmp;
 	}
 	
 	//! Ruft die createLine Methode auf, mit den für eine Ergebniszeile vordefinierten Designeinstellungen aus Config.
@@ -302,7 +302,7 @@ public final class Designer
 		String manualLineTmp = createLine(manualLine, 
 				Config._FILL_SPACE_MANUAL, Config._OPEN_MANUAL_LINE_CHAR, 
 				Config._CLOSE_MANUAL_LINE_CHAR, Config._BORDER_MANUAL, 
-				Config._PUFFER__MANUAL_LINE, false);
+				Config._PUFFER_MANUAL_LINE, false);
 		
 		return manualLineTmp;
 	}

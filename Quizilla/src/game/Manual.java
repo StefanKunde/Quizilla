@@ -57,7 +57,7 @@ public class Manual
 		}
 		
 		System.out.println(Designer.createTitle(Config._MENU_MANUAL));
-		System.out.println(Designer.createEmptyLine());
+		Designer.createWaitForUserLine();
 	}
 
 
@@ -89,7 +89,7 @@ public class Manual
 			while( ( line = br.readLine() ) != null)
 			{
 				sb.append(line);
-			}
+			}br.close();
 				
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();

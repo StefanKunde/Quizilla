@@ -31,7 +31,7 @@ public class Main
 		Highscore highscore = Highscore.create( deSerHighscore );
 		QuestionsDeserializer questionsDeserializer = new QuestionsDeserializer();
 		Questions questions;
-		Manual manual = new Manual ( new File(Config._FILE_MANUAL_PATH));
+		Manual manual = new Manual ( new File(Config._FILE_MANUAL_PATH) );
 		questions = questionsDeserializer.readQuestionsFromXml(new File(Config._FILE_XML_QUESTIONS_FILE));
 		Serialize<Highscore> serHighscore = null;
 		Player player = new Player();

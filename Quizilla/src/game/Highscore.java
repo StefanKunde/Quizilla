@@ -30,7 +30,10 @@ public class Highscore extends ArrayList<Score> implements Serializable
 	private static final long serialVersionUID = -8405218090412486870L;
 	
 	// Konstruktor.
-	public Highscore() { }
+	public Highscore() 
+	{ 
+		this.add(new Score("Stefan", 101));
+	}
 	
 	// Methoden.
 	
