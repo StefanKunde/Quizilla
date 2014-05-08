@@ -2,7 +2,7 @@ package serialization;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
-//! Diese Klasse repräsentiert ein Serialization-Object, welches übergebene serialisierte Objekte serialisiert..
+//! Diese Klasse reprï¿½sentiert ein Serialization-Object, welches ï¿½bergebene Objekte serialisiert..
 /*
  * Durch das Generic <T> muss der Typ des zu serialisiernden Objekts beim Aufruf angegeben werden. 
  * 
@@ -51,7 +51,7 @@ public class Serialize<T>
 	}
 
 	//! Serialisiert ein Objekt.
-	/*! Das zu Serialisierende Objekt wird speichert die Datei unter dem Namen von fileName dieser Klasse. 
+	/*! Das zu Serialisierende Objekt speichert die Datei unter dem Namen von fileName dieser Klasse. 
 	 * 
 	 * @author Stefan Kunde
 	 * @version 1.0
