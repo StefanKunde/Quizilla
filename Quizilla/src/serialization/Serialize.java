@@ -51,7 +51,7 @@ public class Serialize<T>
 	}
 
 	//! Serialisiert ein Objekt.
-	/*! Das zu Serialisierende Objekt speichert die Datei unter dem Namen von fileName dieser Klasse. 
+	/*! Das zu serialisierende Objekt speichert die Datei unter dem Namen von fileName dieser Klasse. 
 	 * 
 	 * @author Stefan Kunde
 	 * @version 1.0
